@@ -1,0 +1,837 @@
+@media screen and (min-device-width: 1000px)
+{  
+  body
+  {
+    margin: 5px;
+    font-family: customFont;
+    background-color: black;
+  }
+
+  #settings-panel
+  {
+    margin: 10;
+    padding: 10;
+    box-sizing: border-box;
+    text-decoration: 0.9s;
+    transition: 0.4s all linear;
+    font-size: 22px;
+    color:aliceblue;
+    display: none;
+  }
+
+  Author_name
+  .hidden-audio  
+  {
+    color:aliceblue;
+    display: none;
+  }
+
+  autoplay-checkbox
+  {}
+  
+  #aside
+  {
+    margin-left: 40px;
+  }
+
+  .heading
+  {
+    position: relative;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    color: transparent;
+    background-image: linear-gradient(to right, red, orange, yellow, lightgreen, skyblue, lightgreen, yellow, red);
+    background-size: 1000px;
+    -webkit-background-clip: text;
+  }
+  
+  #background_cover
+  {
+    background-image: url(img/background-cover.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 2px solid black;
+    border-radius: 6px;
+    width: 100%;
+    margin: 3px;
+    padding: 20px;
+  }
+  #background_cover img
+  {
+    /* position: fixed; 讓圖片脫離框架變成屏幕主體*/
+    margin-top: 5%;
+    cursor: pointer;
+    opacity: 0.88; /* 將圖片變透明 */
+  }
+
+  /* 按鈕菜單的格式 {a有效內置元素标签} */
+  .menu
+  {
+    display: flex; /* 讓menu盒子從橫排變成豎立 */
+    gap: 25px;
+  }
+
+  /* 作者 */
+  .menu .Author_name
+  {
+    font-size: 22px;
+    color:aliceblue;
+  }
+
+  /* 螢火效果 */
+  .menu .firefly 
+  {
+    position: absolute;
+    background-color: yellow;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    animation: flicker 1s infinite;
+  }
+  @keyframes flicker 
+  {
+    0%, 100% 
+    {
+      opacity: 1;
+    }
+    50% 
+    {
+      opacity: 0.5;
+    }
+  }
+
+  /* 鏈接盒子 */
+  .menu .contactbox
+  {
+    margin-left: 320px;
+    padding: 20px;
+    display: flex;
+    gap: 90px;
+  }
+  .menu .contactbox .Discord, .QQ, .X, .Telegram /* 設置聊天群的圖片 */
+  {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-right: 0px;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.8s;
+  }
+  .menu .contactbox .Discord
+  {
+    background-image: url(img/Discord.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #4f369a;
+    -webkit-box-shadow: 10px 5px 10px rgb(87, 163, 210);
+  }
+  .menu .contactbox .Discord:hover 
+  {
+    transform: scale(1.3);
+  }
+  .menu .contactbox .QQ
+  {
+    background-image: url(img/QQ.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #252626;
+    -webkit-box-shadow: 10px 5px 10px rgb(222, 223, 224);
+  }
+  .menu .contactbox .QQ:hover 
+  {
+    transform: scale(1.3);
+  }
+  .menu .contactbox .X
+  {
+    background-image: url(img/X.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #000000;
+    -webkit-box-shadow: 10px 5px 10px rgb(46, 62, 62);
+  }
+  .menu .contactbox .X:hover 
+  {
+    transform: scale(1.3);
+  }
+  .menu .contactbox .Telegram
+  {
+    background-image: url(img/Telegram.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #124451;
+    -webkit-box-shadow: 10px 5px 10px rgb(168, 249, 254);
+  }
+  .menu .contactbox .Telegram:hover 
+  {
+    transform: scale(1.3);
+  }
+
+  .menu .square
+  {
+    width: 345px;
+    height: 345px;
+    position: relative;
+    background-image: url(img/star.jpg);
+    background-repeat: no-repeat;
+    background-size: 240%; /* 100%不足夠填滿背景 */
+    background-position: 50%;
+    margin-right: 25px;
+  }
+
+  .menu .square .triangle 
+  {
+    background-size: 200% 100%;
+    -webkit-box-shadow: 10px 5px 10px rgb(10, 10, 10);
+    transition: all 0.3s ease-out;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  .menu .square .triangle:hover 
+  {
+    background-image: url(img/cover.png);
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 5px pink;
+    transform: scale(1.05);
+    background-position: center;
+  }
+
+  /* top~left選擇器是父级元素.triangle 類的拓展 */
+  /* top */
+  .top 
+  {
+    clip-path: polygon(0% 0%, 100% 0%, 50% 45%);
+    background-image: url(img/star.jpg); /* 讓三角形圖片維持star */
+  }
+  .top .text
+  {
+    color: brown;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 30px;
+  }
+  /* top:hover */
+  .top:hover
+  {
+    clip-path: polygon(1% 0%, 99% 0%, 50% 87%);
+  }
+  .top:hover  ~ .sibling_right
+  {
+    clip-path: polygon(55% 90%, 100% 0%, 100% 100%);
+  }
+  .top:hover  ~ .sibling_bottom
+  {
+    clip-path: polygon(0% 100%, 50% 90%, 100% 100%);
+  }
+  .top:hover  ~ .sibling_left
+  {
+    clip-path: polygon(0% 0%, 45% 90%, 0% 100%);
+  }
+  /* top::before */
+  .top::before 
+  {
+    content: "";
+    position: absolute;
+    top: -80%;
+    left: -120%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(250, 135, 3, 0.7) 10%, rgba(255, 255, 255, 0) 70%);
+    transition: transform 0.5s, top 0.5s, left 0.5s;
+    border-radius: 50%;
+  }
+
+  /* right */
+  .right 
+  {
+    clip-path: polygon(60% 50%, 100% 0%, 100% 100%);
+    text-align: right;
+    background-image: url(img/star.jpg); /* 讓三角形圖片維持star */
+  }
+  .right .text
+  {
+    color: aquamarine;
+    text-align: right;
+    font-size: 25px;
+    margin-top: 45%;
+  }
+  /* right:hover */
+  .right:hover
+  {
+    clip-path: polygon(40% 50%, 100% 0%, 100% 100%);
+  }
+  .right:hover  ~ .sibling_bottom
+  {
+    clip-path: polygon(0% 100%, 50% 59%, 100% 100%);
+  }
+
+  /* right::before */
+  .right::before 
+  {
+    content: "";
+    position: absolute;
+    top: -80%;
+    left: -120%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgb(121, 202, 116, 0.7) 10%, rgba(255, 255, 255, 0) 70%);
+    transition: transform 0.5s, top 0.5s, left 0.5s;
+    border-radius: 50%;
+  }
+
+  /* bottom */
+  .bottom 
+  {
+    clip-path: polygon(0% 100%, 50% 55%, 100% 100%);
+    background-image: url(img/star.jpg); /* 讓三角形圖片維持star */
+  }
+  .bottom .text
+  {
+    color: aqua;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 85%;
+  }
+  /* bottom:hover */
+  .bottom:hover
+  {
+    clip-path: polygon(0% 100%, 50% 45%, 100% 100%);
+  }
+  /* bottom::before */
+  .bottom::before
+  {
+    content: "";
+    position: absolute;
+    top: -80%;
+    left: -120%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(75, 115, 225, 0.7) 10%, rgba(255, 255, 255, 0) 70%);
+    transition: transform 0.5s, top 0.5s, left 0.5s;
+    border-radius: 50%;
+  }
+
+  /* left */
+  .left 
+  {
+    clip-path: polygon(0% 0%, 40% 50%, 0% 100%);
+    background-image: url(img/star.jpg); /* 讓三角形圖片維持star */
+  }
+  .left .text
+  {
+    color: rgb(189, 184, 158);
+    text-align: left;
+    font-size: 25px;
+    margin-top: 45%;
+  }
+  /* left:hover */
+  .left:hover
+  {
+    clip-path: polygon(0% 0%, 60% 50%, 0% 100%);
+  }
+  /* left:before */
+  .left::before 
+  {
+    content: "";
+    position: absolute;
+    top: -80%;
+    left: -120%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(180, 205, 205, 0.7) 10%, rgba(255, 255, 255, 0) 70%);
+    transition: transform 0.5s, top 0.5s, left 0.5s;
+    border-radius: 50%;
+  }
+  /* top~left選擇器是父级元素.triangle 類的拓展 */
+
+  /* 彩蛋--隱藏menu三角形 */
+  .Meaubutton_hidden 
+  {
+    display: none;
+  }
+
+  /* 頂端的標題背景 */
+  .title_background
+  {
+    background-color: #333;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    padding: 30px 0; /* 調整背景於文字跟全屏的比例 */
+  }
+
+  /* 主背景各區域 */
+  #header,#nav,#contact,#footer
+  {
+    border: 2px solid black;
+    border-radius: 6px;
+  }
+  #header
+  {
+    background: radial-gradient(rgb(247, 96, 26),rgba(232, 121, 96, 0.956));
+    background-size: 300px;
+    font-size: 15px;
+  }
+  #nav
+  {
+    background: radial-gradient(rgb(207, 199, 245),rgba(15, 67, 67, 0.65));
+    margin: 3px;
+    padding: 20px;
+  }
+  #contact
+  {
+    background: radial-gradient(rgb(195, 202, 196),rgb(158, 250, 122));
+    margin: 3px;
+    padding: 20px;
+    display: flex; /* 讓盒子從橫排變成豎立 */
+    justify-content: space-between;
+    gap: 50px;
+  }
+  #footer
+  {
+    background: radial-gradient(rgb(65, 127, 219),rgba(169, 218, 250, 0.892));
+  }
+
+  /* 過往遊戲 */
+  .game
+  {
+    margin: 15px;
+    padding: 15px;
+  }
+  .game .title
+  {
+    position: relative;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    color: transparent;
+    animation: rainbow 5s linear infinite;
+    background-image: linear-gradient(to right, rgb(224, 241, 42), rgb(244, 247, 103));
+    background-size: 1000px;
+    -webkit-background-clip: text;
+  }
+  .game .text_content
+  {
+    font-size: 30px;
+    letter-spacing: 2px; /* 調整字母之間的間距 */
+  }
+  .game .game_main
+  {
+    display: none;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .game .game_main.game_active 
+  {
+    display: block;
+  }
+  .game .game_buttons 
+  {
+    margin-bottom: 20px;
+  }
+  .game .game_button 
+  {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .game .game_button.game_active 
+  {
+    background-color: #5940a4;
+  }
+
+  /* 遊戲版本 */
+  .version
+  {
+    margin: 15px;
+    padding: 15px;
+  }
+  .version .version_main
+  {
+    display: none;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .version .version_main.version_active 
+  {
+    display: block;
+  }
+  .version .version_title_background
+  {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  .version .version_buttons 
+  {
+    margin-bottom: 20px;
+  }
+  .version .version_button 
+  {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .version .version_button.version_active 
+  {
+    background-color:  #4f369a;
+  }
+  
+  /* 世界觀 */
+  .Rule .dropdown
+  {
+    position: relative; /* 下拉框容器的定位 */
+    display: inline-block; /* 確保下拉框和其內容在同一行顯示 */
+  }
+
+  .Rule .dropdown_content
+  {
+    display: none;
+    position: relative;
+    min-width: 1000px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .Rule .dropdown.active .dropdown_content
+  {
+    display: block;
+  }
+  
+  .Rule .box
+  {
+    color:aqua;
+    flex: 1 1 30px; /* 設置 flex 元素的彈性能力及其初始尺寸 */
+    position: relative;
+    cursor: pointer;
+  }
+
+  .Rule .background_box
+  {
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    flex: 1 1 30px; /* 設置 flex 元素的彈性能力及其初始尺寸 */
+    position: relative;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  .Rule .background_box .background_box_contact
+  {
+    flex: 1;
+    background-image: url(img/star.jpg);
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    color: rgb(171, 191, 209);
+    border: 2px solid black;
+    border-radius: 6px;
+    margin: 2px;
+    padding: 20px;
+    height: 100%;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+  }
+
+  /* 下載 */
+  #Download_main
+  {
+    border: 1px solid black;
+    border-radius: 2px;
+    order: 3px;
+    height: 655px;
+    flex-grow: 1;
+    background: radial-gradient(rgb(21, 21, 18),rgb(226, 212, 212));
+  }
+  .Download .Download_position
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .arrow /* download和Rule都會用到，所以不加父類 */
+  {
+    font-size: 20px;
+    animation: arrowAnimation 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes arrowAnimation 
+  {
+    0% 
+    {
+      transform: translateY(0);
+    }
+    100% 
+    {
+      transform: translateY(10px);
+    }
+  }
+
+  .Download .title_text
+  {
+    font-size: large;
+    color:aliceblue;
+  }
+
+  .Download .text_zoom1
+  {
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #656464; /* 添加像素化的陰影效果 */
+    letter-spacing: 2px; /* 調整字母之間的間距 */
+  }
+  .Download .text_zoom2
+  {
+    font-size: 20px;
+  }
+
+  .Download .contactbox /* 設置download平台圖片 */
+  {
+    width: 60px;
+    height: 60px;
+    padding: 2px;
+    background-color: rgb(255, 215, 0);
+    -webkit-box-shadow: 10px 5px 10px rgb(153, 152, 146);
+    border-radius: 50px;
+    cursor: pointer;
+    margin-right: 0px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 角色 */
+  .character .box-container
+  {
+    display: flex; /* 讓盒子從橫排變成豎立 */
+    flex-wrap: wrap; /* flex 元素無法在單行中容納時，會自動換行到下一行。*/
+    overflow: hidden; /* 設定容器的溢出處理 (讓字體下去的時候消失)*/
+    width: 100%; /* 設置方塊的寬度(不是女神本體) */
+    height: 1000px; /* 設置方塊的高度(不是女神本體) */
+    gap: 10px;
+  }
+  .character .box-container .box
+  {
+    flex: 1 1 30px; /* 設置 flex 元素的彈性能力及其初始尺寸 */
+    position: relative;
+    overflow: hidden; /* 設定容器的溢出處理 (讓圖片超出格子範圍的消失) */
+    box-shadow: 0 10px 10px rgb(111, 168, 234);
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .character .box-container .box .image
+  {
+    height: 100%; /* 讓圖片不會auto佔據屏幕 */
+    width: 100%; /* 讓圖片不會auto佔據屏幕 */
+    object-fit: cover;
+    position: absolute;
+    top: 0%;
+    left: -100%;
+    pointer-events: none; /* 禁用鼠標事件 */
+  }
+  .character .box-container .box .content_1, .content_2, .content_3, .content_4, .content_5, .content_6, .content_7
+  {
+    text-align: center;
+    padding: 10px;
+    height: 100%; /* 設置盒子背景佔據最大屏幕 */
+    transition: all 0.3s ease-out; /* 讓裝女神的盒子背景緩緩下降的動畫 */
+  }
+  .character .box-container .box .content_1
+  {
+    background-color: rgb(59, 30, 246);
+  }
+
+  .character .box-container .box .content_2
+  {
+    background-color: rgb(38, 214, 82);
+  }
+
+  .character .box-container .box .content_3
+  {
+    background-color: rgb(238, 249, 170);
+  }
+
+  .character .box-container .box .content_4
+  {
+    background-color: rgb(122, 251, 201);
+  }
+
+  .character .box-container .box .content_5
+  {
+    background-color: rgb(167, 167, 167);
+  }
+
+  .character .box-container .box .content_6
+  {
+    background: radial-gradient(rgb(59, 30, 246),rgb(226, 212, 212));
+  }
+
+  .character .box-container .box .content_7
+  {
+    background: radial-gradient(rgb(59, 30, 246),rgb(226, 212, 212));
+  }
+
+  .character .box-container .box:hover .content_1
+  {
+    transform: translateY(25%); /* 設置盒子下降的百分比 */
+  }
+
+  .character .box-container .box:hover .content_2
+  {
+    transform: translateY(25%); /* 設置盒子下降的百分比 */
+  }
+
+  .character .box-container .box:hover .content_3
+  {
+    transform: translateY(25%); /* 設置盒子下降的百分比 */
+  }
+
+  .character .box-container .box:hover .content_4
+  {
+    transform: translateY(25%); /* 設置盒子下降的百分比 */
+  }
+
+  .character .box-container .box:hover .content_5
+  {
+    transform: translateY(25%); /* 設置盒子下降的百分比 */
+  }
+
+  .character .box-container .box:hover .content_6
+  {
+    transform: translateY(25%); /* 設置盒子下降的百分比 */
+  }
+
+  .character .box-container .box:hover .content_7
+  {
+    transform: translateY(25%); /* 設置盒子下降的百分比 */
+  }
+
+  @keyframes rainbow
+  {
+    0%
+    {
+      background-position: 0;
+    }
+
+    25%
+    {
+      background-position: 500px;
+    }
+
+    75%
+    {
+      background-position: 1500px;
+    }
+
+    100%
+    {
+        background-position: 2000px;
+    }
+  }
+
+  .character .box-container .box .title
+  {
+    position: relative;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    color: transparent;
+    animation: rainbow 5s linear infinite;
+    background-image: linear-gradient(to right, rgb(30, 32, 31), rgb(235, 245, 241));
+    background-size: 1000px;
+    -webkit-background-clip: text;
+  }
+  .character .box-container .box .text_content
+  {
+    font-size: 23px;
+    text-shadow: 1px 1px 2px #656464; /* 添加像素化的陰影效果 */
+    letter-spacing: 2px; /* 調整字母之間的間距 */
+  }
+  .character .box-container .box:hover .image
+  {
+    position: absolute; /* 設定圖片為絕對位置 */
+    width: auto; /* 自動調整圖片的寬度 */
+    height: auto; /* 自動調整圖片的高度 */
+    max-width: 60%; /* 設定圖片的最大寬度為容器寬度的60% */
+    max-height: 100%; /* 設定圖片的最大高度為容器高度 */
+    top: 10%; /* 將圖片置上 */
+    left: 50%; /* 將圖片水平置中 */
+    transform: translate(-50%, -40%); /* 調整圖片位置到正確的中心點 */
+    pointer-events: none; /* 禁用鼠標事件 */
+    transition: all 0.3s ease-out; /* 讓女神從左側出來的動畫 */
+  }
+  #character_main
+  {
+    border: 1px solid black;
+    order: 3px;
+    height: 500px;
+    flex-grow: 1;
+    overflow: scroll;
+    color: rgb(66, 66, 66);
+    background: radial-gradient(rgb(249, 230, 230),rgb(87, 89, 107));
+  }
+  #character_main_2
+  {
+    border: 1px solid black;
+    border-radius: 20px;
+    order: 3px;
+    width: 50%;
+    height: 500px;
+    flex-grow: 1;
+    overflow: scroll;
+    color: rgb(66, 66, 66);
+    background: radial-gradient(rgb(249, 230, 230),rgb(87, 89, 107));
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  @font-face
+  {
+    font-family: customFont;
+    src: url(media/WenQuanYi_Bitmap_Song.ttf);
+  }
+}
+
+/* 手機版 */
+@media only screen and (max-width: 800px) 
+{
+  #nav
+  {
+    order: 4px;
+    width: 100%;
+  }
+
+  #aside
+  {
+    order: 2px;
+    width: 100%;
+  }
+
+  #main
+  {
+    background: radial-gradient(rgb(255, 255, 255),rgb(2, 18, 23));
+  }
+}
